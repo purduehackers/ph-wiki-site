@@ -5,7 +5,8 @@ import menuItemI from '@/interfaces/menuItem'
 import styles from './styles.module.css'
 
 const getMenu = async () => {
-  const menuItems = await fetch('http://localhost:3000/api/post')
+  const appURI = process.env.APP_URI
+  const menuItems = await fetch(`${appURI}/api/post`)
   return menuItems.json()
 }
 
