@@ -1,0 +1,17 @@
+.menuBox {
+  border-radius: 0.75rem;
+  background-color: white;
+  width: 400px;
+  height: 700px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.menuBox h1 {
+  text-align: center;
+  font-weight: 500;
+}
+
+.menuBox h2 {
+  text-align: center;
+  font-weight: 500;
+}
