@@ -12,7 +12,9 @@ export default function WikiLayout({
         <div className={styles.menuFrame}>
           <MenuBox />
         </div>
-        <div className={styles.contentFrame}>{children}</div>
+        <div className={styles.contentFrame}>
+          <div className={styles.contentBox}>{children}</div>
+        </div>
       </div>
     </section>
   )

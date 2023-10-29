@@ -1,5 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
+import { MdxComponents } from '@/app/component/wiki/MdxComponenet'
 import PostI from '@/interfaces/post'
 
 interface PropsI {
@@ -16,8 +17,9 @@ const getPost = async (id: string) => {
 }
 
 const WikiPage = async ({ params }: PropsI) => {
-  const postMdxData = await getPost(params.slug)
-  return <MDXRemote source={postMdxData} />
+  const postMdxData = getPost(params.slug)
+  const [postMdx] = await Promise.all([postMdxData])
+  return <MDXRemote source={postMdx} components={MdxComponents} />
 }
 
 export default WikiPage

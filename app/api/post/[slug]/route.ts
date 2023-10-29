@@ -10,6 +10,6 @@ export const GET = async (
   req: NextRequest,
   { params }: { params: paramsI }
 ) => {
-  const posts = await postRepo.findById(params.slug)
-  return NextResponse.json(posts, { status: 200 })
+  const post = await postRepo.findById(params.slug)
+  return NextResponse.json(post, { status: 200 })
 }
