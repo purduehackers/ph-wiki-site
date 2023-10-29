@@ -10,7 +10,7 @@ const getMenu = async () => {
   if (menuItems.ok) {
     return menuItems.json()
   }
-  return {}
+  return []
 }
 
 const MenuBox = async () => {
