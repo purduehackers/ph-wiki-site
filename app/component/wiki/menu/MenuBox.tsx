@@ -21,13 +21,14 @@ const MenuBox = async () => {
       <h1>Purdue Hackers Wiki</h1>
       <h2>Chapters</h2>
       <ol>
-        {menuItems.map((menuItem: menuItemI) => {
-          return (
-            <li key={menuItem.id}>
-              <Link href={'/wiki/' + menuItem.id}>{menuItem.title}</Link>
-            </li>
-          )
-        })}
+        {menuItems &&
+          menuItems.map((menuItem: menuItemI) => {
+            return (
+              <li key={menuItem.id}>
+                <Link href={'/wiki/' + menuItem.id}>{menuItem.title}</Link>
+              </li>
+            )
+          })}
       </ol>
     </div>
   )
