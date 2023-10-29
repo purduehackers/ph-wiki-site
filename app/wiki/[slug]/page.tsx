@@ -10,10 +10,13 @@ interface PropsI {
 }
 
 const getPost = async (id: string) => {
-  const post = await fetch(`http://localhost:3000/api/post/${id}`)
-  const postData: PostI = await post.json()
-  const postMdxData = postData.content
-  return postMdxData
+  const appURI = process.env.APP_URI
+  const post = await fetch(`${appURI}/api/post/${id}`)
+  if (post.ok) {
+    const postData: PostI = await post.json()
+    return postData.content
+  }
+  return ''
 }
 
 const WikiPage = async ({ params }: PropsI) => {

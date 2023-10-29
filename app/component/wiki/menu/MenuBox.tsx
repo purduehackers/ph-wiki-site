@@ -7,7 +7,10 @@ import styles from './styles.module.css'
 const getMenu = async () => {
   const appURI = process.env.APP_URI
   const menuItems = await fetch(`${appURI}/api/post`)
-  return menuItems.json()
+  if (menuItems.ok) {
+    return menuItems.json()
+  }
+  return {}
 }
 
 const MenuBox = async () => {
