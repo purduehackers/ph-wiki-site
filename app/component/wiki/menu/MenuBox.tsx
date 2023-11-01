@@ -3,14 +3,16 @@ import Link from 'next/link'
 import menuItemI from '@/interfaces/menuItem'
 
 import styles from './styles.module.css'
+import { postRepo } from '@/db/repo/post'
 
 const getMenu = async () => {
   const appURI = process.env.APP_URI
-  const menuItems = await fetch(`${appURI}/api/post`)
-  if (menuItems.ok) {
-    return menuItems.json()
-  }
-  return []
+  // const menuItems = await fetch(`${appURI}/api/post`, { cache: 'force-cache' })
+  // if (menuItems.ok) {
+  //   return menuItems.json()
+  // }
+  // return []
+  return postRepo.getAll()
 }
 
 const MenuBox = async () => {
