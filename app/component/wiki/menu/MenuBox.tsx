@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
+import { postRepo } from '@/db/repo/post'
 import menuItemI from '@/interfaces/menuItem'
 
 import styles from './styles.module.css'
-import { postRepo } from '@/db/repo/post'
 
 const getMenu = async () => {
   const appURI = process.env.APP_URI

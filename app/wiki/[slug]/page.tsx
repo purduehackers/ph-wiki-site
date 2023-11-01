@@ -1,7 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 import { MdxComponents } from '@/app/component/wiki/MdxComponenet'
-import PostI from '@/interfaces/post'
 import { postRepo } from '@/db/repo/post'
 
 interface PropsI {
