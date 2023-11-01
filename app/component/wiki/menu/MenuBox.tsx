@@ -5,18 +5,12 @@ import menuItemI from '@/interfaces/menuItem'
 
 import styles from './styles.module.css'
 
-const getMenu = async () => {
-  const appURI = process.env.APP_URI
-  // const menuItems = await fetch(`${appURI}/api/post`, { cache: 'force-cache' })
-  // if (menuItems.ok) {
-  //   return menuItems.json()
-  // }
-  // return []
-  return postRepo.getAll()
+const getAllMenuItems = async () => {
+  return postRepo.getAllMenuItems()
 }
 
 const MenuBox = async () => {
-  const menuItemsData = getMenu()
+  const menuItemsData = getAllMenuItems()
   const [menuItems] = await Promise.all([menuItemsData])
   return (
     <div className={styles.menuBox}>

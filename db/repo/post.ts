@@ -3,7 +3,7 @@ import menuItemI from '@/interfaces/menuItem'
 
 const Post = db.Post
 
-const getAll = async () => {
+const getAllMenuItems = async () => {
   const posts = await Post.find()
   const menu: menuItemI[] = []
   for (const post of posts) {
@@ -18,6 +18,6 @@ const findById = async (id: string) => {
 }
 
 export const postRepo = {
-  getAll,
+  getAllMenuItems,
   findById,
 }

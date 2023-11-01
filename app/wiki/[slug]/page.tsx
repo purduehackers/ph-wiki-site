@@ -10,13 +10,6 @@ interface PropsI {
 }
 
 const getPost = async (id: string) => {
-  const appURI = process.env.APP_URI
-  // const post = await fetch(`${appURI}/api/post/${id}`, { cache: 'force-cache' })
-  // if (post.ok) {
-  //   const postData: PostI = await post.json()
-  //   return postData.content
-  // }
-  // return ''
   const post = await postRepo.findById(id)
   return post.content
 }

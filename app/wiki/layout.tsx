@@ -1,4 +1,7 @@
+import { Suspense } from 'react'
+
 import MenuBox from '../component/wiki/menu/MenuBox'
+import PostLoading from './loading'
 import styles from './styles.module.css'
 
 export default function WikiLayout({
@@ -13,7 +16,9 @@ export default function WikiLayout({
           <MenuBox />
         </div>
         <div className={styles.contentFrame}>
-          <div className={styles.contentBox}>{children}</div>
+          <Suspense fallback={<PostLoading />}>
+            <div className={styles.contentBox}>{children}</div>
+          </Suspense>
         </div>
       </div>
     </section>
