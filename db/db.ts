@@ -1,7 +1,8 @@
 import getConfig from 'next/config'
 import mongoose from 'mongoose'
 
-import postModel from './model/post'
+import { createPostModel } from './model/Post'
+import { createPathModel } from './model/Path'
 
 const { serverRuntimeConfig } = getConfig()
 
@@ -16,5 +17,6 @@ mongoose
 mongoose.Promise = global.Promise
 
 export const db = {
-  Post: postModel(),
+  Post: createPostModel(),
+  Path: createPathModel(),
 }

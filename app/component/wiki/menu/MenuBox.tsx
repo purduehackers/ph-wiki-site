@@ -1,12 +1,34 @@
 import Link from 'next/link'
 
-import { postRepo } from '@/db/repo/post'
-import menuItemI from '@/interfaces/menuItem'
+import { pathRepo } from '@/db/repo/PathRepo'
+import menuItemI from '@/interfaces/MenuItem'
+import MenuItem from '@/interfaces/MenuItem'
 
 import styles from './styles.module.css'
 
 const getAllMenuItems = async () => {
-  return postRepo.getAllMenuItems()
+  return pathRepo.getAllMenuItems()
+}
+
+interface MenuListProps {
+  menuItems: MenuItem[]
+}
+
+const MenuList = ({ menuItems }: MenuListProps) => {
+  return (
+    <ol>
+      {menuItems.map((menuItem: menuItemI) => {
+        return (
+          <li key={menuItem.id}>
+            <Link href={'/wiki/' + menuItem.id}>{menuItem.name}</Link>
+            {menuItem.children.length && (
+              <MenuList menuItems={menuItem.children} />
+            )}
+          </li>
+        )
+      })}
+    </ol>
+  )
 }
 
 const MenuBox = async () => {
@@ -16,15 +38,7 @@ const MenuBox = async () => {
     <div className={styles.menuBox}>
       <h1>Purdue Hackers Wiki</h1>
       <h2>Chapters</h2>
-      <ol>
-        {menuItems.map((menuItem: menuItemI) => {
-          return (
-            <li key={menuItem.id}>
-              <Link href={'/wiki/' + menuItem.id}>{menuItem.title}</Link>
-            </li>
-          )
-        })}
-      </ol>
+      <MenuList menuItems={menuItems.children} />
     </div>
   )
 }
