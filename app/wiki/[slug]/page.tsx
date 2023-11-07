@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
-import { MdxComponents } from '@/app/component/wiki/MdxComponenet'
+import { MdxComponents } from '@/app/components/wiki/MdxComponenet'
 import { PostRepo } from '@/db/repo/PostRepo'
 
 interface WikiPageProps {

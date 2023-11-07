@@ -1,0 +1,28 @@
+.navbar {
+}
+
+.iconContainter {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  padding: 20px;
+  background-color: #fdcb58;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.menuBox {
+  margin-top: 20px;
+  background-color: white;
+  width: 400px;
+  height: 500px;
+  padding: 10px;
+}
+
+.menuBox a {
+  text-decoration: none;
+  color: black;
+}

@@ -17,7 +17,7 @@ interface MenuListProps {
 
 const MenuList = ({ menuItems }: MenuListProps) => {
   return (
-    <ol>
+    <ul>
       {menuItems.map((menuItem: menuItemI) => {
         return (
           <li key={menuItem.id}>
@@ -28,20 +28,23 @@ const MenuList = ({ menuItems }: MenuListProps) => {
           </li>
         )
       })}
-    </ol>
+    </ul>
   )
 }
 
-const MenuBox = async () => {
+const Navbar = async () => {
   const rootMenuItemData = getRootMenuItem()
   const [rootMenuItem] = await Promise.all([rootMenuItemData])
   return (
-    <div className={styles.menuBox}>
-      <h1>Purdue Hackers Wiki</h1>
-      <h2>Chapters</h2>
-      <MenuList menuItems={rootMenuItem.children} />
+    <div className={styles.navbar}>
+      <div className={styles.hero}>
+        <div className={`${styles.card} card`}>Purdue Hackers</div>
+      </div>
+      <div className={`${styles.menuBox} card`}>
+        <MenuList menuItems={rootMenuItem.children} />
+      </div>
     </div>
   )
 }
 
-export default MenuBox
+export default Navbar
