@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
-import { pathRepo } from '@/db/repo/PathRepo'
+import { PathRepo } from '@/db/repo/PathRepo'
 import menuItemI from '@/interfaces/MenuItem'
 import MenuItem from '@/interfaces/MenuItem'
 
 import styles from './styles.module.css'
 
 const getRootMenuItem = async () => {
-  const rootMenuItem = pathRepo.getRootMenuItem()
+  const rootMenuItem = PathRepo.getRootMenuItem()
   return rootMenuItem
 }
 
