@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { postRepo } from '@/db/repo/post'
+import { PostRepo } from '@/db/repo/PostRepo'
 
 interface paramsI {
   slug: string
@@ -10,6 +10,6 @@ export const GET = async (
   req: NextRequest,
   { params }: { params: paramsI }
 ) => {
-  const post = await postRepo.findById(params.slug)
+  const post = await PostRepo.findById(params.slug)
   return NextResponse.json(post, { status: 200 })
 }

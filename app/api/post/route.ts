@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { postRepo } from '@/db/repo/post'
+import { PathRepo } from '@/db/repo/PathRepo'
 
 export const GET = async (req: NextRequest) => {
-  const posts = await postRepo.getAllMenuItems()
+  const posts = await PathRepo.getRootMenuItem()
   return NextResponse.json(posts, { status: 200 })
 }

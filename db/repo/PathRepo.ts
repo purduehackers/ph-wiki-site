@@ -32,13 +32,13 @@ const parsePath = (path: PathDocument) => {
   return menuItem
 }
 
-const getAllMenuItems = async () => {
+const getRootMenuItem = async () => {
   /* Necessary to have root path because posts can be under the root path */
   const rootPath = await Path.findOne({ name: 'root' }).exec()
   const rootMenuItem = parsePath(rootPath)
   return rootMenuItem
 }
 
-export const pathRepo = {
-  getAllMenuItems,
+export const PathRepo = {
+  getRootMenuItem,
 }

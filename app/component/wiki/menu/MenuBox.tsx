@@ -6,8 +6,9 @@ import MenuItem from '@/interfaces/MenuItem'
 
 import styles from './styles.module.css'
 
-const getAllMenuItems = async () => {
-  return pathRepo.getAllMenuItems()
+const getRootMenuItem = async () => {
+  const rootMenuItem = pathRepo.getRootMenuItem()
+  return rootMenuItem
 }
 
 interface MenuListProps {
@@ -21,7 +22,7 @@ const MenuList = ({ menuItems }: MenuListProps) => {
         return (
           <li key={menuItem.id}>
             <Link href={'/wiki/' + menuItem.id}>{menuItem.name}</Link>
-            {menuItem.children.length && (
+            {menuItem.children.length > 0 && (
               <MenuList menuItems={menuItem.children} />
             )}
           </li>
@@ -32,13 +33,13 @@ const MenuList = ({ menuItems }: MenuListProps) => {
 }
 
 const MenuBox = async () => {
-  const menuItemsData = getAllMenuItems()
-  const [menuItems] = await Promise.all([menuItemsData])
+  const rootMenuItemData = getRootMenuItem()
+  const [rootMenuItem] = await Promise.all([rootMenuItemData])
   return (
     <div className={styles.menuBox}>
       <h1>Purdue Hackers Wiki</h1>
       <h2>Chapters</h2>
-      <MenuList menuItems={menuItems.children} />
+      <MenuList menuItems={rootMenuItem.children} />
     </div>
   )
 }
