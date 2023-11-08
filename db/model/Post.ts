@@ -1,9 +1,10 @@
-import mongoose, { Model, Document } from 'mongoose'
+import mongoose, { Model, Document } from "mongoose";
 
 export interface Post {
-  name: string
-  url: string
-  content: string
+  name: string;
+  slug: string;
+  url: string;
+  content: string;
 }
 export interface PostDocument extends Post, Document {}
 export interface PostModel extends Model<PostDocument> {}
@@ -16,14 +17,14 @@ const PostSchema = new mongoose.Schema<PostDocument, PostModel>(
   },
   {
     timestamps: true,
-    collection: 'posts',
-  }
-)
+    collection: "posts",
+  },
+);
 
-export { PostSchema }
+export { PostSchema };
 export const createPostModel = () => {
   return (
     mongoose.models.Post ||
-    mongoose.model<PostDocument, PostModel>('Post', PostSchema)
-  )
-}
+    mongoose.model<PostDocument, PostModel>("Post", PostSchema)
+  );
+};

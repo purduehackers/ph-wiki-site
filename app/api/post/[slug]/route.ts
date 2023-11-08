@@ -1,15 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from "next/server";
 
-import { PostRepo } from '@/db/repo/PostRepo'
+import { PostRepo } from "@/db/repo/PostRepo";
 
 interface paramsI {
-  slug: string
+  slug: string;
 }
 
 export const GET = async (
   req: NextRequest,
-  { params }: { params: paramsI }
+  { params }: { params: paramsI },
 ) => {
-  const post = await PostRepo.findById(params.slug)
-  return NextResponse.json(post, { status: 200 })
-}
+  const post = await PostRepo.findBySlug(params.slug);
+  return NextResponse.json(post, { status: 200 });
+};
