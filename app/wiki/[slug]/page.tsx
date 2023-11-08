@@ -1,23 +1,23 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
-import { MdxComponents } from "@/app/components/wiki/MdxComponenet";
-import { PostRepo } from "@/db/repo/PostRepo";
+import { MdxComponents } from '@/app/components/wiki/MdxComponenet'
+import { PostRepo } from '@/db/repo/PostRepo'
 
 interface WikiPageProps {
   params: {
-    slug: string;
-  };
+    slug: string
+  }
 }
 
 const getPost = async (slug: string) => {
-  const post = await PostRepo.findBySlug(slug);
-  return post[0]?.content || "fake content";
-};
+  const post = await PostRepo.findBySlug(slug)
+  return post[0]?.content || 'fake content'
+}
 
 const WikiPage = async ({ params }: WikiPageProps) => {
-  const postMdxData = getPost(params.slug);
-  const [postMdx] = await Promise.all([postMdxData]);
-  return <MDXRemote source={postMdx} components={MdxComponents} />;
-};
+  const postMdxData = getPost(params.slug)
+  const [postMdx] = await Promise.all([postMdxData])
+  return <MDXRemote source={postMdx} components={MdxComponents} />
+}
 
-export default WikiPage;
+export default WikiPage
