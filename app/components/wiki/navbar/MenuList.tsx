@@ -47,13 +47,7 @@ const MenuListPath = ({ menuItem }: MenuListPathProps) => {
   }
 
   return (
-    <div
-      key={menuItem.id}
-      className={styles.menuItemFolder}
-      onClick={() => {
-        setOpen(!open)
-      }}
-    >
+    <div key={menuItem.id} className={styles.menuItemFolder}>
       <div className={styles.menuItemFolderLink}>
         <div style={triangleStyle}>
           <Image
@@ -63,7 +57,14 @@ const MenuListPath = ({ menuItem }: MenuListPathProps) => {
             height={10}
           />
         </div>
-        <div className={styles.menuItemFolderName}>{menuItem.name}</div>
+        <div
+          className={styles.menuItemFolderName}
+          onClick={() => {
+            setOpen(!open)
+          }}
+        >
+          {menuItem.name}
+        </div>
       </div>
       <div className={styles.indent}>
         {open && <MenuList menuItems={menuItem.children} />}

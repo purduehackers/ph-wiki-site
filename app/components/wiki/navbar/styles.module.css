@@ -61,10 +61,10 @@
 
 .menuItemFolderLink {
   display: flex;
-  cursor: pointer;
 }
 
 .menuItemFolderName {
+  cursor: pointer;
   padding-left: 5px;
 }
 
