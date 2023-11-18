@@ -8,7 +8,7 @@ const getRootMenuItem = async () => {
   return rootMenuItem
 }
 
-const Navbar = async () => {
+const Sidebar = async () => {
   const rootMenuItemData = getRootMenuItem()
   const [rootMenuItem] = await Promise.all([rootMenuItemData])
   return (
@@ -23,4 +23,4 @@ const Navbar = async () => {
   )
 }
 
-export default Navbar
+export default Sidebar
