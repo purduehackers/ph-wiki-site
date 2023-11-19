@@ -1,7 +1,5 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
 
 import menuItemI from '@/interfaces/MenuItem'
 import MenuItem from '@/interfaces/MenuItem'
@@ -24,8 +22,10 @@ const MenuList = ({ menuItems }: MenuListProps) => {
           )
         } else {
           return (
-            <div key={menuItem.id} className={styles.menuItem}>
-              <Link href={'/wiki/' + menuItem.slug}>{menuItem.name}</Link>
+            <div key={menuItem.id}>
+              <Link href={'/wiki/' + menuItem.slug}>
+                <div className={styles.menuItem}># {menuItem.name}</div>
+              </Link>
             </div>
           )
         }
@@ -39,37 +39,13 @@ interface MenuListPathProps {
 }
 
 const MenuListPath = ({ menuItem }: MenuListPathProps) => {
-  const [open, setOpen] = useState<boolean>(false)
-
-  const triangleStyle = {
-    transform: open ? 'rotate(90deg)' : '',
-    transition: 'transform 150ms ease',
-  }
-
   return (
-    <div key={menuItem.id} className={styles.menuItem}>
-      <div className={styles.menuItemFolderLink}>
-        <div style={triangleStyle}>
-          <Image
-            src="/icons/triangle.png"
-            alt="triangle"
-            width={10}
-            height={10}
-          />
-        </div>
-        <div
-          className={styles.menuItemFolderName}
-          onClick={() => {
-            setOpen(!open)
-          }}
-        >
-          {menuItem.name}
-        </div>
-      </div>
+    <details key={menuItem.id} className={styles.menuFolder}>
+      <summary className={styles.menuItem}>{menuItem.name}</summary>
       <div className={styles.indent}>
-        {open && <MenuList menuItems={menuItem.children} />}
+        <MenuList menuItems={menuItem.children} />
       </div>
-    </div>
+    </details>
   )
 }
 

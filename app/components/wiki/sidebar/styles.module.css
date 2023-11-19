@@ -1,16 +1,3 @@
-.iconContainter {
-  display: flex;
-  justify-content: center;
-}
-
-.card {
-  padding: 20px;
-  background-color: #fdcb58;
-  font-size: 40px;
-  font-weight: 600;
-  text-align: center;
-}
-
 .menuBox {
   margin-top: 20px;
   background-color: white;
@@ -18,30 +5,20 @@
   height: 500px;
   padding: 10px;
   overflow: scroll;
-}
-
-.menuBoxTitle {
-  /* display: flex;
-  justify-content: center; */
-}
-
-.menuBoxTitle div {
-  padding: 5px 10px 5px 10px;
-  width: fit-content;
-  font-size: 20px;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .menuBox a {
   text-decoration: none;
-  color: #475569;
 }
 
-.menuBox a:hover {
-  color: black;
-}
-
-.indent {
-  padding-left: 10px;
+.menuBoxTitle {
+  padding: 5px 10px 5px 10px;
+  width: fit-content;
+  font-size: 20px;
 }
 
 @keyframes fadeIn {
@@ -64,15 +41,10 @@
   color: black;
 }
 
-.menuItemFolderLink {
-  display: flex;
-}
-
-.menuItemFolderName {
+.menuFolder {
   cursor: pointer;
-  padding-left: 5px;
 }
 
-.triangleContainer {
-  display: inline;
+.indent {
+  padding-left: 20px;
 }
