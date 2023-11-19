@@ -1,6 +1,8 @@
 import { Code } from 'bright'
 import type { MDXComponents } from 'mdx/types'
 
+import styles from './styles.module.css'
+
 const languageString = 'language-'
 
 interface childrenI {
@@ -35,14 +37,17 @@ export const MdxComponents: MDXComponents = {
     }
 
     return (
-      <Code
-        {...props}
-        theme="material-default"
-        title={fileName}
-        lang={language}
-      >
-        {code}
-      </Code>
+      <div className={styles.codeBox}>
+        <Code
+          {...props}
+          // theme="material-default"
+          theme="github-light"
+          title={fileName}
+          lang={language}
+        >
+          {code}
+        </Code>
+      </div>
     )
   },
 }

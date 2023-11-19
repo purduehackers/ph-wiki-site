@@ -8,19 +8,18 @@ const getRootMenuItem = async () => {
   return rootMenuItem
 }
 
-const Navbar = async () => {
+const Sidebar = async () => {
   const rootMenuItemData = getRootMenuItem()
   const [rootMenuItem] = await Promise.all([rootMenuItemData])
   return (
-    <div className={styles.navbar}>
-      <div className={styles.hero}>
-        <div className={`${styles.card} card`}>Purdue Hackers</div>
-      </div>
-      <div className={`${styles.menuBox} card`}>
+    <section>
+      <div className={styles.menuBox}>
+        <div className={styles.menuBoxTitle}>Content</div>
+        <hr />
         <MenuList menuItems={rootMenuItem.children} />
       </div>
-    </div>
+    </section>
   )
 }
 
-export default Navbar
+export default Sidebar
