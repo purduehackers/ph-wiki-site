@@ -24,7 +24,7 @@ const MenuList = ({ menuItems }: MenuListProps) => {
           )
         } else {
           return (
-            <div key={menuItem.id} className={styles.menuItemFile}>
+            <div key={menuItem.id} className={styles.menuItem}>
               <Link href={'/wiki/' + menuItem.slug}>{menuItem.name}</Link>
             </div>
           )
@@ -47,7 +47,7 @@ const MenuListPath = ({ menuItem }: MenuListPathProps) => {
   }
 
   return (
-    <div key={menuItem.id} className={styles.menuItemFolder}>
+    <div key={menuItem.id} className={styles.menuItem}>
       <div className={styles.menuItemFolderLink}>
         <div style={triangleStyle}>
           <Image

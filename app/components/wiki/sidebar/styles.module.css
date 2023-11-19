@@ -14,14 +14,29 @@
 .menuBox {
   margin-top: 20px;
   background-color: white;
-  width: 400px;
+  width: 350px;
   height: 500px;
   padding: 10px;
   overflow: scroll;
 }
 
+.menuBoxTitle {
+  /* display: flex;
+  justify-content: center; */
+}
+
+.menuBoxTitle div {
+  padding: 5px 10px 5px 10px;
+  width: fit-content;
+  font-size: 20px;
+}
+
 .menuBox a {
   text-decoration: none;
+  color: #475569;
+}
+
+.menuBox a:hover {
   color: black;
 }
 
@@ -38,22 +53,15 @@
   }
 }
 
-.menuItemFile {
+.menuItem {
   padding: 5px;
-  text-decoration: underline;
-  text-decoration-color: #818cf8;
-  text-decoration-thickness: 3px;
   animation: fadeIn 0.5s;
   margin: 5px;
+  color: #475569;
 }
 
-.menuItemFolder {
-  padding: 5px;
-  text-decoration: underline;
-  text-decoration-color: #ec4899;
-  text-decoration-thickness: 3px;
-  animation: fadeIn 0.5s;
-  margin: 5px;
+.menuItem:hover {
+  color: black;
 }
 
 .menuItemFolderLink {
