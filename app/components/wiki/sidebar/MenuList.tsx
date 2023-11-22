@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
 
-import menuItemI from '@/interfaces/MenuItem'
-import MenuItem from '@/interfaces/MenuItem'
+import menuItemI from '@/types/MenuItem'
+import MenuItem from '@/types/MenuItem'
 
 import styles from './styles.module.css'
 

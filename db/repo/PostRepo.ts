@@ -1,18 +1,20 @@
-import { db } from "../db";
+import { PostDocument } from '@/types/Post'
+import { db } from '../db'
 
-const Post = db.Post;
+const Post = db.Post
 
 const findById = async (id: string) => {
-  const post = await Post.findById(id).exec();
-  return post;
-};
+  const post = await Post.findById(id).exec()
+  return post
+}
 
 const findBySlug = async (slug: string) => {
-  const post = await Post.find({ slug: slug }).exec();
-  return post;
-};
+  const postData = await Post.findOne({ slug: slug })
+  const post = postData.toObject() as PostDocument
+  return post
+}
 
 export const PostRepo = {
   findById,
   findBySlug,
-};
+}
