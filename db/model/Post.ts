@@ -1,15 +1,7 @@
-import mongoose, { Model, Document } from "mongoose";
+import mongoose from 'mongoose'
+import { PostDocument, IPostModel } from '@/types/Post'
 
-export interface Post {
-  name: string;
-  slug: string;
-  url: string;
-  content: string;
-}
-export interface PostDocument extends Post, Document {}
-export interface PostModel extends Model<PostDocument> {}
-
-const PostSchema = new mongoose.Schema<PostDocument, PostModel>(
+const PostSchema = new mongoose.Schema<PostDocument, IPostModel>(
   {
     name: { type: String, required: true },
     url: { type: String, required: true },
@@ -17,14 +9,14 @@ const PostSchema = new mongoose.Schema<PostDocument, PostModel>(
   },
   {
     timestamps: true,
-    collection: "posts",
-  },
-);
+    collection: 'posts',
+  }
+)
 
-export { PostSchema };
+export { PostSchema }
 export const createPostModel = () => {
   return (
     mongoose.models.Post ||
-    mongoose.model<PostDocument, PostModel>("Post", PostSchema)
-  );
-};
+    mongoose.model<PostDocument, IPostModel>('Post', PostSchema)
+  )
+}
