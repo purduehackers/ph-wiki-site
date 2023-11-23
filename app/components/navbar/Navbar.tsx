@@ -14,8 +14,10 @@ const Navbar = () => {
         />
         <h1>Purdue Hackers Wiki</h1>
       </div>
-      <ul>
-        <li>Documentation</li>
+      <ul className={styles.links}>
+        <li>Official Website</li>
+        <li>Blog</li>
+        <li>Wiki</li>
       </ul>
     </div>
   )

@@ -27,10 +27,10 @@ const WikiPage = async ({ params }: WikiPageProps) => {
       <div className={styles.lastUpdated}>
         Last Updated: {postMdx.lastUpdated.toDateString()}
       </div>
-      <h1># {postMdx.name}</h1>
+      <h1 className={styles.title}>{postMdx.name}</h1>
       <Authors users={postMdx.authors} />
       <Tags tags={postMdx.tags} />
-      <hr />
+      <hr className={styles.divider} />
       <MDXRemote source={postMdx.content} components={MdxComponents} />
     </div>
   )

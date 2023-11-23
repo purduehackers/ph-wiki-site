@@ -6,7 +6,6 @@
 }
 
 .menuFrame {
-  background-color: #fffbcc;
   width: 650px;
   height: 100%;
   place-content: center;
@@ -22,7 +21,7 @@
 }
 
 .contentBox {
-  padding: 80px 40px 40px 40px;
+  padding: 140px 40px 40px 40px;
   width: 800px;
 }
 

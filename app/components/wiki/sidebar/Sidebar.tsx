@@ -14,8 +14,11 @@ const Sidebar = async () => {
   return (
     <section>
       <div className={styles.menuBox}>
-        <div className={styles.menuBoxTitle}>Content</div>
-        <hr />
+        <div className={styles.menuBoxTitle}>
+          Content [
+          <a href="https://github.com/purduehackers/ph-wiki-posts">edit</a>]
+        </div>
+        <hr className={styles.divider} />
         <MenuList menuItems={rootMenuItem.children} />
       </div>
     </section>
