@@ -18,7 +18,7 @@
 .menuBoxTitle {
   padding: 5px 10px 5px 10px;
   width: fit-content;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 @keyframes fadeIn {
@@ -47,4 +47,10 @@
 
 .indent {
   padding-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menuBox {
+    height: 300px;
+  }
 }
