@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+
 export default function Home() {
-  return <div>Welcome to the wiki page</div>
+  redirect('/wiki/readme-1')
 }
