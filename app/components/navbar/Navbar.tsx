@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './styles.module.css'
 
@@ -15,9 +16,15 @@ const Navbar = () => {
         <h1>Purdue Hackers Wiki</h1>
       </div>
       <ul className={styles.links}>
-        <li>Official Website</li>
-        <li>Blog</li>
-        <li>Wiki</li>
+        <li>
+          <Link href="https://www.purduehackers.com/">Official Website</Link>
+        </li>
+        <li>
+          <Link href="https://blog.purduehackers.com/">Blog</Link>
+        </li>
+        <li>
+          <Link href="/wiki/readme-1">Wiki</Link>
+        </li>
       </ul>
     </div>
   )
