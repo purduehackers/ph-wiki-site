@@ -35,11 +35,16 @@
   width: 100%;
 }
 
-.navbar ul li {
-  color: #585858;
+.navbar ul li a {
+  color: #475569;
   float: right;
   padding: 10px;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  color: black;
 }
 
 .links {
