@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 
-import Navbar from '../components/navbar/Navbar'
+import NavbarWrapper from '../components/navbar/NavbarWrapper'
 import Sidebar from '../components/wiki/sidebar/Sidebar'
 import PostLoading from './loading'
 import styles from './styles.module.css'
@@ -12,7 +12,7 @@ export default function WikiLayout({
 }) {
   return (
     <section>
-      <Navbar />
+      <NavbarWrapper />
       <div className={styles.mainFrame}>
         <div className={styles.menuFrame}>
           <Sidebar />

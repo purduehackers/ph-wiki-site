@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import styles from './styles.module.css'
 
-const Navbar = () => {
+const DesktopNavbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
@@ -15,7 +15,7 @@ const Navbar = () => {
         />
         <h1>Purdue Hackers Wiki</h1>
       </div>
-      <ul className={styles.links}>
+      <ul className={styles.desktopLinks}>
         <li>
           <Link href="https://www.purduehackers.com/">Official Website</Link>
         </li>
@@ -23,11 +23,13 @@ const Navbar = () => {
           <Link href="https://blog.purduehackers.com/">Blog</Link>
         </li>
         <li>
-          <Link href="/wiki/readme-1">Wiki</Link>
+          <Link className={styles.active} href="/wiki/readme-1">
+            Wiki
+          </Link>
         </li>
       </ul>
     </div>
   )
 }
 
-export default Navbar
+export default DesktopNavbar

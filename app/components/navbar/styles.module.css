@@ -1,9 +1,33 @@
+.mask {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  opacity: 0.5;
+}
+
+.threeLines {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-right: 30px;
+}
+
+.x {
+  position: absolute;
+  cursor: pointer;
+  margin-right: 20px;
+  right: 0;
+}
+
 .navbar {
   background-color: #ffdf38;
   position: absolute;
   top: 0;
   width: 100vw;
-  z-index: 100;
+  z-index: 50;
   height: 100px;
   display: flex;
   align-items: center;
@@ -32,21 +56,62 @@
 
 .navbar ul {
   list-style-type: none;
+}
+
+.desktopLinks {
+  padding-right: 20px;
   width: 100%;
 }
 
-.navbar ul li a {
+.desktopLinks li a {
+  font-size: 1.1rem;
   color: #475569;
+  font-weight: 700;
+  text-decoration: none;
   float: right;
   padding: 10px;
+}
+
+.desktopLinks li a:hover {
+  color: black;
+}
+
+.desktopLinks li .active {
+  text-decoration: underline solid #475569 4px;
+}
+
+.mobileLinks {
+  margin: 10px;
+  height: 200px;
+  padding-top: 20px;
+  padding-right: 30px;
+  background-color: #fef3c7;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.mobileLinks ul {
+  list-style-type: none;
+}
+
+.mobileLinks ul li {
+  padding-bottom: 20px;
+}
+
+.mobileLinks li .active {
+  text-decoration: underline solid #475569 4px;
+}
+
+.mobileLinks li a {
+  font-size: 1.1rem;
+  color: #475569;
   font-weight: 700;
   text-decoration: none;
 }
 
-.navbar ul li a:hover {
+.mobileLinks li a:hover {
   color: black;
-}
-
-.links {
-  padding-right: 20px;
 }
