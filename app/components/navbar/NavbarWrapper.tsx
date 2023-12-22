@@ -6,21 +6,18 @@ import MobileNavbar from './MobileNavbar'
 import NavbarCard from './NavbarCard'
 import styles from './styles.module.css'
 
-const useViewport = () => {
-  const [width, setWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
-
-  return { width }
-}
-
 const NavbarWrapper = () => {
   const [toggle, setToggle] = useState(false)
-  const { width } = useViewport()
+  const [width, setWidth] = useState(0)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth)
+      const handleWindowResize = () => setWidth(window.innerWidth)
+      window.addEventListener('resize', handleWindowResize)
+      return () => window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
+
   const mobileBreakpoint = 600
 
   useEffect(() => {
