@@ -2,14 +2,8 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Space_Grotesk } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-
-const spaceGrotesk = Space_Grotesk({
-  // weight: '400',
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
   title: 'Purdue Hackers Wiki',
@@ -23,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

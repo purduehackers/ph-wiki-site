@@ -31,7 +31,9 @@ const WikiPage = async ({ params }: WikiPageProps) => {
       <Authors users={postMdx.authors} />
       <Tags tags={postMdx.tags} />
       <hr className={styles.divider} />
-      <MDXRemote source={postMdx.content} components={MdxComponents} />
+      <div className={styles.mdxWrapper}>
+        <MDXRemote source={postMdx.content} components={MdxComponents} />
+      </div>
     </div>
   )
 }
