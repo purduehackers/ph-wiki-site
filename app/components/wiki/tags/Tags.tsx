@@ -8,7 +8,9 @@ const Tags = ({ tags }: TagsProps) => {
   return (
     <div className={styles.tagContainer}>
       {tags.map((tag) => (
-        <a key={tag}>{tag}</a>
+        <a className={styles.tag} key={tag}>
+          {tag}
+        </a>
       ))}
     </div>
   )
