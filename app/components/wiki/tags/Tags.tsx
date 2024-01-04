@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import styles from './styles.module.css'
 
 interface TagsProps {
@@ -8,9 +10,9 @@ const Tags = ({ tags }: TagsProps) => {
   return (
     <div className={styles.tagContainer}>
       {tags.map((tag) => (
-        <a className={styles.tag} key={tag}>
+        <Link className={styles.tag} key={tag} href={'/wiki/tag/' + tag}>
           {tag}
-        </a>
+        </Link>
       ))}
     </div>
   )

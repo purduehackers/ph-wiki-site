@@ -18,7 +18,21 @@ const findBySlug = async (slug: string) => {
   return post
 }
 
+const findByTag = async (tag: string) => {
+  const postsData = await Post.find({ tags: tag })
+  if (!postsData) {
+    notFound()
+  }
+
+  const posts: PostDocument[] = []
+  for (const postData of postsData) {
+    posts.push(postData.toObject())
+  }
+  return posts
+}
+
 export const PostRepo = {
   findById,
   findBySlug,
+  findByTag,
 }
