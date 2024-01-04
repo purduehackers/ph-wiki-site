@@ -1,6 +1,9 @@
+import Tags from '@/app/components/posts/tags/Tags'
 import TagPost from '@/app/components/tags/TagPost'
 import { PostRepo } from '@/db/repo/PostRepo'
 import { Post } from '@/types/Post'
+
+import styles from './styles.module.css'
 
 interface TagPageProps {
   params: {
@@ -18,7 +21,8 @@ const TagPage = async ({ params }: TagPageProps) => {
   const [postsMdx] = await Promise.all([postsMdxData])
   return (
     <div>
-      {/* <h1 className={styles.title}>Posts with tag &apos;{params.tag}&apos;</h1> */}
+      <Tags tags={[params.tag]} />
+      <hr className={styles.divider} />
       {postsMdx.map((postMdx: Post) => {
         if (!postMdx.archived) {
           return (
