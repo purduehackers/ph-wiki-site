@@ -1,8 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
-import Authors from '@/app/components/wiki/authors/Authors'
-import { MdxComponents } from '@/app/components/wiki/MdxComponenet'
-import Tags from '@/app/components/wiki/tags/Tags'
+import Authors from '@/app/components/posts/authors/Authors'
+import { MdxComponents } from '@/app/components/posts/MdxComponenet'
+import Tags from '@/app/components/posts/tags/Tags'
 import { PostRepo } from '@/db/repo/PostRepo'
 
 import styles from './styles.module.css'

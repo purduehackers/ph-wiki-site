@@ -1,9 +1,6 @@
-import Link from 'next/link'
-
+import TagPost from '@/app/components/tags/TagPost'
 import { PostRepo } from '@/db/repo/PostRepo'
 import { Post } from '@/types/Post'
-
-import styles from './styles.module.css'
 
 interface TagPageProps {
   params: {
@@ -21,12 +18,12 @@ const TagPage = async ({ params }: TagPageProps) => {
   const [postsMdx] = await Promise.all([postsMdxData])
   return (
     <div>
-      <h1 className={styles.title}>Posts with tag &apos;{params.tag}&apos;</h1>
+      {/* <h1 className={styles.title}>Posts with tag &apos;{params.tag}&apos;</h1> */}
       {postsMdx.map((postMdx: Post) => {
         if (!postMdx.archived) {
           return (
             <div key={postMdx.slug}>
-              <Link href={'/wiki/' + postMdx.slug}>{postMdx.name}</Link>
+              <TagPost post={postMdx} />
             </div>
           )
         }

@@ -1,0 +1,26 @@
+.postCard {
+  padding: 20px 20px 20px 20px;
+  background-color: white;
+  margin-bottom: 10px;
+  position: relative;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.postCard h1 {
+  margin: 20px 0px;
+  font-size: 2rem;
+}
+
+.readmore {
+  background-color: black;
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0px 40px 20px 10px;
+}

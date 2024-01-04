@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
 import NavbarWrapper from '../components/navbar/NavbarWrapper'
-import Sidebar from '../components/wiki/sidebar/Sidebar'
+import Sidebar from '../components/posts/sidebar/Sidebar'
 import PostLoading from './loading'
 import styles from './styles.module.css'
 
