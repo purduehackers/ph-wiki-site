@@ -2,6 +2,10 @@
   color: #475569;
 }
 
+.edit {
+  text-decoration: none;
+}
+
 .title {
   margin: 20px 0px;
   font-size: 3rem;
@@ -28,4 +32,12 @@
   background-color: #ffdf38;
   border: 1px solid black;
   border-collapse: collapse;
+}
+
+.mdxWrapper p {
+  line-height: 2;
+}
+
+.mdxWrapper ul li {
+  padding: 5px 0px;
 }
