@@ -5,10 +5,18 @@
 }
 
 .tag {
-  background-color: #ffc738;
+  background-color: #ffd60c;
   border-radius: 8px;
   padding: 5px 10px 5px 10px;
   margin: 0px 10px 10px 0px;
   color: white;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.tag:hover {
+  /* background-color: #ffbb10; */
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
