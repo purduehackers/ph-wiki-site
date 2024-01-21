@@ -1,9 +1,11 @@
 import { Code } from 'bright'
 import type { MDXComponents } from 'mdx/types'
+import { Noto_Serif } from 'next/font/google'
 
 import styles from './styles.module.css'
 
 const languageString = 'language-'
+const notoSerif = Noto_Serif({ subsets: ['latin'] })
 
 interface childrenI {
   props: {

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 import Authors from '@/app/components/posts/authors/Authors'
@@ -25,7 +26,11 @@ const WikiPage = async ({ params }: WikiPageProps) => {
   return (
     <div>
       <div className={styles.lastUpdated}>
-        Last Updated: {postMdx.lastUpdated.toDateString()}
+        Last Updated: {postMdx.lastUpdated.toDateString()} [
+        <Link className={styles.edit} href={postMdx.url}>
+          edit
+        </Link>
+        ]
       </div>
       <h1 className={styles.title}>{postMdx.name}</h1>
       <Authors users={postMdx.authors} />
