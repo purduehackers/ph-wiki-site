@@ -4,27 +4,34 @@ import Authors from '@/app/components/posts/authors/Authors'
 import CompiledMdx from '@/app/components/posts/mdx/CompiledMdx'
 import { MdxComponents } from '@/app/components/posts/mdx/MdxComponenet'
 import Tags from '@/app/components/posts/tags/Tags'
-import { PostRepo } from '@/db/repo/PostRepo'
+import { test_blog } from '@/app/components/test/test'
 
 import styles from './styles.module.css'
 
-interface WikiPageProps {
-  params: {
-    slug: string
+const getPost = async () => {
+  const post = {
+    lastUpdated: new Date(),
+    url: '/',
+    name: 'test title',
+    authors: [
+      {
+        login: 'chi-wei-lien',
+        avatar_url: 'https://avatars.githubusercontent.com/u/89671525?v=4',
+        html_url: 'https://github.com/chi-wei-lien',
+      },
+    ],
+    tags: ['test'],
+    content: test_blog,
   }
-}
-
-const getPost = async (slug: string) => {
-  const post = await PostRepo.findBySlug(slug)
   return post
 }
 
-const WikiPage = async ({ params }: WikiPageProps) => {
-  const postMdxData = getPost(params.slug)
+const WikiPage = async () => {
+  const postMdxData = getPost()
   const [postMdx] = await Promise.all([postMdxData])
 
   return (
-    <div className={styles.postContainer}>
+    <div>
       <div className={styles.lastUpdated}>
         Last Updated: {postMdx.lastUpdated.toDateString()} [
         <Link className={styles.edit} href={postMdx.url}>

@@ -66,7 +66,7 @@
 
 .desktopLinks li a {
   font-size: 1.1rem;
-  color: #475569;
+  color: #1e293b;
   font-weight: 700;
   text-decoration: none;
   float: right;
@@ -78,7 +78,7 @@
 }
 
 .desktopLinks li .active {
-  text-decoration: underline solid #475569 4px;
+  text-decoration: underline solid #1e293b 4px;
 }
 
 .mobileLinks {
@@ -103,12 +103,12 @@
 }
 
 .mobileLinks li .active {
-  text-decoration: underline solid #475569 4px;
+  text-decoration: underline solid #1e293b 4px;
 }
 
 .mobileLinks li a {
   font-size: 1.1rem;
-  color: #475569;
+  color: #1e293b;
   font-weight: 700;
   text-decoration: none;
 }
