@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
 const WikiPage = () => {
-  redirect('/wiki/readme-1')
+  redirect('/wiki/readme')
 }
 
 export default WikiPage

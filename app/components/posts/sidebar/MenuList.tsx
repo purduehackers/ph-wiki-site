@@ -24,7 +24,7 @@ const MenuList = ({ menuItems }: MenuListProps) => {
           return (
             <div key={menuItem.id}>
               <Link href={'/wiki/' + menuItem.slug}>
-                <div className={styles.menuItem}># {menuItem.name}</div>
+                <div className={styles.menuItem}>• {menuItem.name}</div>
               </Link>
             </div>
           )
