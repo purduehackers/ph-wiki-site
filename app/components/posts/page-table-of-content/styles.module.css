@@ -2,7 +2,6 @@
   margin-left: 100px;
   background-color: white;
   width: 350px;
-  /* height: 500px; */
   height: fit-content;
   padding: 10px;
   overflow: scroll;
@@ -10,10 +9,15 @@
     0 10px 15px -3px rgb(0 0 0 / 0.2),
     0 4px 6px -4px rgb(0 0 0 / 0.2);
   border-radius: 8px;
-
   position: sticky;
   top: 150px;
   align-self: start;
+}
+
+@media only screen and (max-width: 600px) {
+  .TableOfContentBox {
+    display: none;
+  }
 }
 
 .TableOfContentBoxTitle {
