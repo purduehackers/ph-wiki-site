@@ -2,3 +2,14 @@ body {
   padding: 0;
   margin: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target:before {
+  content: '';
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
+}

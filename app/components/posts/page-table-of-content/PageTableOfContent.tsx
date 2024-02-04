@@ -6,16 +6,16 @@ interface PageTableOfContentProps {
 
 const PageTableOfContent = ({ headings }: PageTableOfContentProps) => {
   return (
-    <div style={{ paddingLeft: 10 }}>
+    <ul>
       {headings.map((child) => {
         return (
-          <div style={{ paddingLeft: 10 }} key={child.key}>
-            <div>{child.text}</div>
+          <li key={child.key}>
+            <a href={`#${child.key}`}>{child.text}</a>
             <PageTableOfContent headings={child.children} />
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ul>
   )
 }
 

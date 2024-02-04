@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import Authors from '@/app/components/posts/authors/Authors'
 import CompiledMdx from '@/app/components/posts/mdx/CompiledMdx'
-import { MdxComponents } from '@/app/components/posts/mdx/MdxComponenet'
+import { getMdxComponents } from '@/app/components/posts/mdx/MdxComponenet'
 import PageTableOfContent from '@/app/components/posts/page-table-of-content/PageTableOfContent'
 import Tags from '@/app/components/posts/tags/Tags'
 import { PostRepo } from '@/db/repo/PostRepo'
@@ -55,7 +55,7 @@ const WikiPage = async ({ params }: WikiPageProps) => {
         <div className={styles.mdxWrapper}>
           <CompiledMdx
             source={postData.post.content}
-            components={MdxComponents}
+            components={getMdxComponents()}
           />
         </div>
       </div>

@@ -21,9 +21,6 @@ export default function WikiLayout({
           <div className={styles.contentFrame}>
             <div className={styles.contentBox}>{children}</div>
           </div>
-          {/* <div>
-            <PageTableOfContent />
-          </div> */}
         </Suspense>
       </div>
     </section>
