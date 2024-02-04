@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Authors from '@/app/components/posts/authors/Authors'
 import CompiledMdx from '@/app/components/posts/mdx/CompiledMdx'
 import { getMdxComponents } from '@/app/components/posts/mdx/MdxComponent'
-import PageTableOfContent from '@/app/components/posts/page-table-of-content/PageTableOfContent'
+import TableOfContent from '@/app/components/posts/page-table-of-content/TableOfContent'
 import Tags from '@/app/components/posts/tags/Tags'
 import { PostRepo } from '@/db/repo/PostRepo'
 import { PostDocument } from '@/types/Post'
@@ -59,9 +59,7 @@ const WikiPage = async ({ params }: WikiPageProps) => {
           />
         </div>
       </div>
-      <div className={styles.TableOfContentContainer}>
-        <PageTableOfContent headings={postData.headings} />
-      </div>
+      <TableOfContent headings={postData.headings} />
     </div>
   )
 }
