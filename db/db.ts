@@ -9,7 +9,7 @@ const { serverRuntimeConfig } = getConfig()
 mongoose
   .connect(process.env.MONGODB_URI || serverRuntimeConfig.connectionString)
   .then(() => {
-    console.log('Connected to MongoDB')
+    // console.log('Connected to MongoDB')
   })
   .catch(() => {
     console.log("Couldn't connect to MongoDB")

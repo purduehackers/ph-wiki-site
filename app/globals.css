@@ -2,3 +2,16 @@ body {
   padding: 0;
   margin: 0;
 }
+
+/* Smooth scroll somehow not working */
+/* html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+} */
+
+:target:before {
+  content: '';
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
+}

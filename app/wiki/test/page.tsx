@@ -2,9 +2,10 @@ import Link from 'next/link'
 
 import Authors from '@/app/components/posts/authors/Authors'
 import CompiledMdx from '@/app/components/posts/mdx/CompiledMdx'
-import { MdxComponents } from '@/app/components/posts/mdx/MdxComponenet'
+import { getMdxComponents } from '@/app/components/posts/mdx/MdxComponent'
 import Tags from '@/app/components/posts/tags/Tags'
 import { test_blog } from '@/app/components/test/test'
+import { getHeadings } from '@/utils/getheadings'
 
 import styles from './styles.module.css'
 
@@ -29,6 +30,7 @@ const getPost = async () => {
 const WikiPage = async () => {
   const postMdxData = getPost()
   const [postMdx] = await Promise.all([postMdxData])
+  const headings = await getHeadings(test_blog)
 
   return (
     <div>
@@ -44,7 +46,7 @@ const WikiPage = async () => {
       <Tags tags={postMdx.tags} />
       <hr className={styles.divider} />
       <div className={styles.mdxWrapper}>
-        <CompiledMdx source={postMdx.content} components={MdxComponents} />
+        <CompiledMdx source={postMdx.content} components={getMdxComponents()} />
       </div>
     </div>
   )

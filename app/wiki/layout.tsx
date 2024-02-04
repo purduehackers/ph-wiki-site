@@ -17,11 +17,11 @@ export default function WikiLayout({
         <div className={styles.menuFrame}>
           <Sidebar />
         </div>
-        <div className={styles.contentFrame}>
-          <Suspense fallback={<PostLoading />}>
+        <Suspense fallback={<PostLoading />}>
+          <div className={styles.contentFrame}>
             <div className={styles.contentBox}>{children}</div>
-          </Suspense>
-        </div>
+          </div>
+        </Suspense>
       </div>
     </section>
   )

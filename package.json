@@ -17,12 +17,15 @@
     "bright": "^0.8.4",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "geist": "^1.1.0",
+    "github-slugger": "^2.0.0",
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.3",
     "next": "14.0.0",
     "next-mdx-remote": "^4.4.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "remark": "^15.0.1",
+    "strip-markdown": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

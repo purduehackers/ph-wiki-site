@@ -1,0 +1,60 @@
+.TableOfContentBox {
+  margin-left: 100px;
+  background-color: white;
+  width: 350px;
+  /* height: 500px; */
+  height: fit-content;
+  padding: 10px;
+  overflow: scroll;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.2),
+    0 4px 6px -4px rgb(0 0 0 / 0.2);
+  border-radius: 8px;
+
+  position: sticky;
+  top: 150px;
+  align-self: start;
+}
+
+.TableOfContentBoxTitle {
+  padding: 5px 10px 5px 10px;
+  width: fit-content;
+  font-size: 1.25rem;
+}
+
+.divider {
+  color: #cbcbcb;
+}
+
+.TableOfContentBox ul li a {
+  text-decoration: none;
+}
+
+.menuBoxTitle {
+  padding: 5px 10px 5px 10px;
+  width: fit-content;
+  font-size: 1.25rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.item {
+  padding: 5px;
+  animation: fadeIn 0.5s;
+  margin: 5px;
+}
+
+.item a {
+  color: #475569;
+}
+
+.item a:hover {
+  color: black;
+}
