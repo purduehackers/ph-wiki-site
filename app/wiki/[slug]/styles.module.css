@@ -1,3 +1,12 @@
+.container {
+  display: flex;
+  justify-content: left;
+}
+
+.TableOfContentContainer {
+  width: 500px;
+}
+
 .postContainer {
   background-color: white;
   box-shadow:
@@ -5,6 +14,7 @@
     0 4px 6px -4px rgb(0 0 0 / 0.2);
   border-radius: 8px;
   padding: 3rem;
+  width: 700px;
 }
 
 .lastUpdated {

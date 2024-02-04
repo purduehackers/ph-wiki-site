@@ -5,6 +5,7 @@ import CompiledMdx from '@/app/components/posts/mdx/CompiledMdx'
 import { MdxComponents } from '@/app/components/posts/mdx/MdxComponenet'
 import Tags from '@/app/components/posts/tags/Tags'
 import { test_blog } from '@/app/components/test/test'
+import { getHeadings } from '@/utils/getheadings'
 
 import styles from './styles.module.css'
 
@@ -29,6 +30,7 @@ const getPost = async () => {
 const WikiPage = async () => {
   const postMdxData = getPost()
   const [postMdx] = await Promise.all([postMdxData])
+  const headings = await getHeadings(test_blog)
 
   return (
     <div>
