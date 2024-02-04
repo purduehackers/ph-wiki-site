@@ -3,9 +3,11 @@ body {
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Smooth scroll somehow not working */
+/* html {
+  --scroll-behavior: smooth!important;
+  scroll-behavior: smooth!important;
+}  */
 
 :target:before {
   content: '';
