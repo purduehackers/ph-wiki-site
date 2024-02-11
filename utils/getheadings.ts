@@ -14,7 +14,10 @@ export interface headingNode {
 }
 
 const fetchHeadings = (source: string): heading[] => {
-  const headingLines = source.split('\n').filter((line) => {
+  const codeBlockRegex = /```[\s\S]*?```/g
+  const noCodeBlocksSource = source.replace(codeBlockRegex, '')
+
+  const headingLines = noCodeBlocksSource.split('\n').filter((line) => {
     return line.match(/^#{1,3}\s(.+)$/gm)
   })
 

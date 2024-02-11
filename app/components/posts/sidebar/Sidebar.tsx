@@ -13,6 +13,10 @@ const Sidebar = async () => {
   const [rootMenuItem] = await Promise.all([rootMenuItemData])
   return (
     <section>
+      <div className={styles.cardHead}>
+        {/* Purdue Hackers Wiki */}
+        <h1>Purdue Hackers Wiki</h1>
+      </div>
       <div className={styles.menuBox}>
         <div className={styles.menuBoxTitle}>
           Content [
