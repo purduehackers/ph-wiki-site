@@ -20,7 +20,6 @@
 }
 
 .postCard {
-  width: 1000px;
   background-color: white;
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 0.2),
@@ -73,4 +72,22 @@
 
 .mdxWrapper ul li {
   padding: 5px 0px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .tableOfContentContainer {
+    display: none;
+  }
+
+  .postContainer {
+    width: 100%;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  .postCard {
+    height: fit-content;
+  }
 }

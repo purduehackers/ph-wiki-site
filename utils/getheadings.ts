@@ -14,6 +14,7 @@ export interface headingNode {
 }
 
 const fetchHeadings = (source: string): heading[] => {
+  /* remove code block to avoid comment symbols */
   const codeBlockRegex = /```[\s\S]*?```/g
   const noCodeBlocksSource = source.replace(codeBlockRegex, '')
 

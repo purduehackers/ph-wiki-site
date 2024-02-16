@@ -21,18 +21,14 @@
   height: 100vh;
   overflow: scroll;
 }
-/* 
-.contentBox {
-  margin-top: 20px;
-  padding: 140px 40px 40px 40px;
-} */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .menuFrame {
     padding-top: 100px;
     padding-bottom: 20px;
     width: 100%;
     align-items: stretch;
+    display: none;
   }
 
   .mainFrame {
@@ -41,14 +37,10 @@
   }
 
   .contentFrame {
-    height: 100%;
+    margin-top: 100px;
+    width: 100%;
     overflow: visible;
     display: flex;
     justify-content: center;
-  }
-
-  .contentBox {
-    width: 90%;
-    padding: 0;
   }
 }

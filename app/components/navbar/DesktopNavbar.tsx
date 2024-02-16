@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import Logo from './Logo'
@@ -5,21 +6,18 @@ import styles from './styles.module.css'
 
 const DesktopNavbar = () => {
   return (
-    <div className={styles.navbar}>
+    <div className={styles.desktopNavbar}>
       <Logo />
-      <ul className={styles.desktopLinks}>
-        <li>
-          <Link href="https://www.purduehackers.com/">Official Website</Link>
-        </li>
-        <li>
-          <Link href="https://blog.purduehackers.com/">Blog</Link>
-        </li>
-        <li>
-          <Link className={styles.active} href="/wiki/readme-1">
-            Wiki
-          </Link>
-        </li>
-      </ul>
+      <div className={styles.house}>
+        <Link href={'/mobile/menu'}>
+          <Image
+            src="/icons/house.png"
+            alt="three lines"
+            width={30}
+            height={30}
+          />
+        </Link>
+      </div>
     </div>
   )
 }

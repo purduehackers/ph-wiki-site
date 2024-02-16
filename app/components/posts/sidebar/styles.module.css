@@ -1,6 +1,9 @@
+.card {
+  width: 350px;
+}
+
 .menuBox {
   background-color: white;
-  width: 350px;
   height: 400px;
   padding: 10px;
   overflow: scroll;
@@ -12,21 +15,19 @@
 
 .cardHead {
   height: 100px;
+  width: 100%;
   margin-top: 20px;
   background-color: #ffdf38;
-  width: 100%;
   border-radius: 8px 8px 0px 0px;
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 0.2),
     0 4px 6px -4px rgb(0 0 0 / 0.2);
   text-align: center;
   padding: 0;
-}
-
-.cardHead h1 {
-  padding-top: 40px;
-  font-weight: 600;
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  place-content: center;
+  align-items: center;
 }
 
 .divider {

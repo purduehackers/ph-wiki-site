@@ -1,36 +1,30 @@
-.mask {
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 100;
-  opacity: 0.5;
-}
-
-.threeLines {
-  cursor: pointer;
-  width: 100%;
-  display: flex;
-  justify-content: right;
-  padding-right: 30px;
-}
-
-.x {
-  position: absolute;
-  cursor: pointer;
-  margin-right: 20px;
-  right: 0;
-}
-
 .navbar {
+  display: none;
   background-color: #ffdf38;
   position: absolute;
   top: 0;
   width: 100vw;
   z-index: 50;
   height: 100px;
+}
+
+.desktopNavbar {
   display: flex;
   align-items: center;
+  background-color: #ffdf38;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 50;
+  height: 100px;
+}
+
+.house {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-right: 30px;
 }
 
 .logo {
@@ -42,6 +36,8 @@
   color: #1e293b;
   align-items: center;
   display: flex;
+  width: fit-content;
+  height: fit-content;
   text-decoration: none;
   flex-shrink: 0;
   box-shadow:
@@ -55,64 +51,9 @@
   font-weight: 700;
 }
 
-.navbar ul {
-  list-style-type: none;
-}
-
-.desktopLinks {
-  padding-right: 20px;
-  width: 100%;
-}
-
-.desktopLinks li a {
-  font-size: 1.1rem;
-  color: #1e293b;
-  font-weight: 700;
-  text-decoration: none;
-  float: right;
-  padding: 10px;
-}
-
-.desktopLinks li a:hover {
-  color: black;
-}
-
-.desktopLinks li .active {
-  text-decoration: underline solid #1e293b 4px;
-}
-
-.mobileLinks {
-  margin: 10px;
-  height: 200px;
-  padding-top: 20px;
-  padding-right: 30px;
-  background-color: #fef3c7;
-  border-radius: 8px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-}
-
-.mobileLinks ul {
-  list-style-type: none;
-}
-
-.mobileLinks ul li {
-  padding-bottom: 20px;
-}
-
-.mobileLinks li .active {
-  text-decoration: underline solid #1e293b 4px;
-}
-
-.mobileLinks li a {
-  font-size: 1.1rem;
-  color: #1e293b;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.mobileLinks li a:hover {
-  color: black;
+@media only screen and (max-width: 1000px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
 }
