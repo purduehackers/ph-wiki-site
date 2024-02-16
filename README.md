@@ -26,7 +26,6 @@ cd ..
 # ensuring ph-wiki-posts is up to date
 cd ph-wiki-posts
 git pull
-# set up env in ph-wiki-post-loader
 cd ..
 ```
 
