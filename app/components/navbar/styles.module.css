@@ -1,7 +1,7 @@
 .navbar {
   display: none;
   background-color: #ffdf38;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 50;
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   background-color: #ffdf38;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
   z-index: 50;
