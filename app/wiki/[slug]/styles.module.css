@@ -1,16 +1,33 @@
 .container {
   display: flex;
   justify-content: left;
+  width: 100%;
+  height: 100vh;
+}
+
+.tableOfContentContainer {
+  width: 33%;
+  place-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .postContainer {
+  width: 67%;
+  display: flex;
+  justify-content: center;
+}
+
+.postCard {
   background-color: white;
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 0.2),
     0 4px 6px -4px rgb(0 0 0 / 0.2);
   border-radius: 8px;
   padding: 3rem;
-  width: 700px;
+  overflow-y: scroll;
+  margin: 30px;
 }
 
 .lastUpdated {
@@ -55,4 +72,22 @@
 
 .mdxWrapper ul li {
   padding: 5px 0px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .tableOfContentContainer {
+    display: none;
+  }
+
+  .postContainer {
+    width: 100%;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  .postCard {
+    height: fit-content;
+  }
 }

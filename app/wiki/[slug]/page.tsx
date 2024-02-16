@@ -41,25 +41,29 @@ const WikiPage = async ({ params }: WikiPageProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.postContainer}>
-        <div className={styles.lastUpdated}>
-          Last Updated: {postData.post.lastUpdated.toDateString()} [
-          <Link className={styles.edit} href={postData.post.url}>
-            edit
-          </Link>
-          ]
-        </div>
-        <h1 className={styles.title}>{postData.post.name}</h1>
-        <Authors users={postData.post.authors} />
-        <Tags tags={postData.post.tags} />
-        <hr className={styles.divider} />
-        <div className={styles.mdxWrapper}>
-          <CompiledMdx
-            source={postData.post.content}
-            components={getMdxComponents()}
-          />
+        <div className={styles.postCard}>
+          <div className={styles.lastUpdated}>
+            Last Updated: {postData.post.lastUpdated.toDateString()} [
+            <Link className={styles.edit} href={postData.post.url}>
+              edit
+            </Link>
+            ]
+          </div>
+          <h1 className={styles.title}>{postData.post.name}</h1>
+          <Authors users={postData.post.authors} />
+          <Tags tags={postData.post.tags} />
+          <hr className={styles.divider} />
+          <div className={styles.mdxWrapper}>
+            <CompiledMdx
+              source={postData.post.content}
+              components={getMdxComponents()}
+            />
+          </div>
         </div>
       </div>
-      <TableOfContent headings={postData.headings} />
+      <div className={styles.tableOfContentContainer}>
+        <TableOfContent headings={postData.headings} />
+      </div>
     </div>
   )
 }

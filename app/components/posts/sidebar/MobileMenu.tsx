@@ -1,6 +1,5 @@
 import { PathRepo } from '@/db/repo/PathRepo'
 
-import Logo from '../../navbar/Logo'
 import MenuList from './MenuList'
 import styles from './styles.module.css'
 
@@ -9,14 +8,11 @@ const getRootMenuItem = async () => {
   return rootMenuItem
 }
 
-const Sidebar = async () => {
+const MobileMenu = async () => {
   const rootMenuItemData = getRootMenuItem()
   const [rootMenuItem] = await Promise.all([rootMenuItemData])
   return (
     <section className={styles.card}>
-      <div className={styles.cardHead}>
-        <Logo />
-      </div>
       <div className={styles.menuBox}>
         <div className={styles.menuBoxTitle}>
           Content [
@@ -29,4 +25,4 @@ const Sidebar = async () => {
   )
 }
 
-export default Sidebar
+export default MobileMenu

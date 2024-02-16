@@ -1,14 +1,33 @@
-.menuBox {
-  margin-top: 20px;
-  background-color: white;
+.card {
   width: 350px;
-  height: 500px;
+}
+
+.menuBox {
+  background-color: white;
+  height: 400px;
   padding: 10px;
   overflow: scroll;
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 0.2),
     0 4px 6px -4px rgb(0 0 0 / 0.2);
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.cardHead {
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ffdf38;
+  border-radius: 8px 8px 0px 0px;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.2),
+    0 4px 6px -4px rgb(0 0 0 / 0.2);
+  text-align: center;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  place-content: center;
+  align-items: center;
 }
 
 .divider {
